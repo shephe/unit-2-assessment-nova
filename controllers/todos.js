@@ -16,9 +16,9 @@ toDoController.post('/', (req, res) => {
         ? req.body.done = true
         : req.body.done = false;
     console.log(req.body)
-    ToDo.create(req.body), (error, createdToDo) => {
+    ToDo.create(req.body, (error, createdToDo) => {
         res.redirect('/todo')
-    }
+    })
 })
 
 toDoController.delete('/:id', (req, res) => {
