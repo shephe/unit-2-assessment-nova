@@ -4,6 +4,7 @@ const app = express()
 const db = mongoose.connection
 const toDoController = require('./controllers/todos.js')
 const methodOverride = require('method-override')
+const PORT = process.env.PORT || 3000
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/assessment2'
 mongoose.connect(MONGODB_URI, {useFindAndModify: true, useNewUrlParser: true, useUnifiedTopology: true})
@@ -21,4 +22,4 @@ app.get('/', (req, res) => {
     res.redirect('/todo/')
 })
 
-app.listen(3000, () => console.log('listening on port 3000'))
+app.listen(PORT, () => console.log('listening on port', PORT))
