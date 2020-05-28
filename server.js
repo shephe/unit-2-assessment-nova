@@ -18,7 +18,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 app.use('/todo', toDoController)
 app.get('/', (req, res) => {
-    res.redirect('/todo')
+    res.redirect('/todo/')
 })
 
 app.listen(3000, () => console.log('listening on port 3000'))
